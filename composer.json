@@ -23,7 +23,9 @@
         "symfony/expression-language": "^5",
         "symfony/finder": "^5",
         "symfony/stopwatch": "^5",
-        "symfony/yaml": "^4"
+        "symfony/yaml": "^4",
+        "ext-json": "*",
+        "symfony/intl": "^5.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^8",

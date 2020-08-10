@@ -232,6 +232,16 @@ class DBUtils
             'bigint' => 0,
             'float' => 0,
             'decimal' => 0,
+            'boolean' => 0,
+            '\date' => '1970-01-01',
+            '\datetime' => '1970-01-01 00:00:00',
+            '\time' => '00:00:00',
+            '\smallint' => 0,
+            '\integer' => 0,
+            '\bigint' => 0,
+            '\float' => 0,
+            '\decimal' => 0,
+            '\boolean' => 0,
         ];
 
         // Value is simply an empty string

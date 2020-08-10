@@ -264,9 +264,16 @@ class DB extends AbstractAnonymizer
                 $this->dbUtils->getEmptyValue($this->entityCols[$field]['type']) :
                 $value;
 
+            if($value == ''){
+                $value = $this->dbUtils->getEmptyValue($this->entityCols[$field]['type']);
+            }
+
             $condition = $this->dbUtils->getCondition($field, $this->entityCols[$field]);
             $queryBuilder = $queryBuilder->set($field, $condition);
             $queryBuilder = $queryBuilder->setParameter(":$field", $value);
+            $type = strtolower($this->entityCols[$field]['type']);
+            fwrite(STDOUT, "$type - $field: $value" . PHP_EOL);
+
         }
         $queryBuilder = $queryBuilder->where("{$this->priKey} = :{$this->priKey}");
         $queryBuilder = $queryBuilder->setParameter(":{$this->priKey}", $row[$this->priKey]);
