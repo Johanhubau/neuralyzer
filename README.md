@@ -1,9 +1,6 @@
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/edyan/neuralyzer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/edyan/neuralyzer/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/edyan/neuralyzer/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/edyan/neuralyzer/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/edyan/neuralyzer/badges/build.png?b=master)](https://scrutinizer-ci.com/g/edyan/neuralyzer/build-status/master)
-[![Build Status](https://travis-ci.com/edyan/neuralyzer.svg?branch=master)](https://travis-ci.com/edyan/neuralyzer)
+This project is under no condition mine, I just added it to tinker with some personnal projects.
 
-
+To find the original please go [here](https://github.com/edyan/neuralyzer)
 
 edyan/neuralyzer
 =====
