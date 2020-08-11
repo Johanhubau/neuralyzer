@@ -6,153 +6,83 @@ entities:
             code_assurance: { method: sentence, params: ['255'], unique: false }
             designaion: { method: sentence, params: ['255'], unique: false }
             telephone: { method: phoneNumber, unique: false, params: {  } }
-            fax: { method: sentence, params: ['255'], unique: false }
+            fax: { method: phoneNumber, unique: false, params: { } }
             email: { method: email, unique: false, params: {  } }
-        action: update
-        limit: 0
-        pre_actions: {  }
-        post_actions: {  }
-    creneau:
-        cols:
-            date_debut: { method: date, params: ['Y-m-d H:i:s'], unique: false }
-            date_fin: { method: date, params: ['Y-m-d H:i:s'], unique: false }
-            statut: { method: sentence, params: ['8'], unique: false }
         action: update
         limit: 0
         pre_actions: {  }
         post_actions: {  }
     dossier:
         cols:
-            civilite: { method: sentence, params: ['255'], unique: false }
-            nom: { method: sentence, params: ['255'], unique: false }
-            prenom: { method: sentence, params: ['255'], unique: false }
-            adresse: { method: sentence, params: ['255'], unique: false }
-            codepostal: { method: sentence, params: ['255'], unique: false }
-            ville: { method: sentence, params: ['255'], unique: false }
-            portable: { method: sentence, params: ['255'], unique: false }
+            civilite: { method: prefix, unique: false, params: {  } }
+            nom: { method: lastName, unique: false, params: {  } }
+            prenom: { method: firstName, unique: false, params: {  } }
+            adresse: { method: address, unique: false, params: {  } }
+            codepostal: { method: postcode, unique: false, params: {  } }
+            ville: { method: city, unique: false, params: {  } }
+            portable: { method: phoneNumber, unique: false, params: {  } }
             telephone: { method: phoneNumber, unique: false, params: {  } }
-            pays: { method: sentence, params: ['255'], unique: false }
-            societe: { method: sentence, params: ['255'], unique: false }
-            adresse_bureau: { method: sentence, params: ['255'], unique: false }
-            codepostal_bureau: { method: sentence, params: ['255'], unique: false }
-            ville_bureau: { method: sentence, params: ['255'], unique: false }
-            portable_bureau: { method: sentence, params: ['255'], unique: false }
+            adresse_bureau: { method: address, unique: false, params: {  } }
+            codepostal_bureau: { method: postcode, unique: false, params: {  } }
+            ville_bureau: { method: city, unique: false, params: {  } }
+            portable_bureau: { method: phoneNumber, unique: false, params: {  } }
             telephone_bureau: { method: phoneNumber, unique: false, params: {  } }
-            pays_bureau: { method: sentence, params: ['255'], unique: false }
-            fax: { method: sentence, params: ['255'], unique: false }
+            fax: { method: phoneNumber, unique: false, params: {  } }
             email: { method: email, unique: false, params: {  } }
             date_naissance: { method: date, params: [Y-m-d], unique: false }
-            lieu_naissance: { method: sentence, params: ['255'], unique: false }
-            numero_permis: { method: sentence, params: ['255'], unique: false }
-            permis_delivre_a: { method: sentence, params: ['255'], unique: false }
-            permis_delivre_le: { method: date, params: [Y-m-d], unique: false }
-            immatriculation: { method: sentence, params: ['255'], unique: false }
-            couleur: { method: sentence, params: ['255'], unique: false }
-            type_peinture: { method: sentence, params: ['255'], unique: false }
-            assurance: { method: sentence, params: ['255'], unique: false }
-            puissance: { method: sentence, params: ['255'], unique: false }
-            energie: { method: sentence, params: ['255'], unique: false }
-            numero_serie: { method: sentence, params: ['255'], unique: false }
-            type: { method: sentence, params: ['255'], unique: false }
-            observation: { method: sentence, params: ['255'], unique: false }
-            numero_sinistre: { method: sentence, params: ['255'], unique: false }
-            code_elexia: { method: sentence, params: ['255'], unique: false }
-            type_expertise: { method: sentence, params: ['255'], unique: false }
-            statut: { method: sentence, params: ['255'], unique: false }
-            date_facturation: { method: date, params: [Y-m-d], unique: false }
-            date_reception_facture: { method: date, params: [Y-m-d], unique: false }
-            date_mission: { method: date, params: [Y-m-d], unique: false }
-            date_mise_en_reparation: { method: date, params: [Y-m-d], unique: false }
-            date_restitution: { method: date, params: [Y-m-d], unique: false }
-            etat_reparable: { method: sentence, params: ['255'], unique: false }
-            raison_refus_reparation: { method: sentence, params: ['255'], unique: false }
+            lieu_naissance: { method: address, unique: false, params: {  } }
+            numero_permis: { method: randomNumber, params: [9], unique: false }
+            permis_delivre_a: { method: city, unique: false, params: {  } }
+            immatriculation: { method: word, unique: false, params: {  } }
+            numero_serie: { method: randomNumber, params: [9], unique: false }
         action: update
         limit: 0
         pre_actions: {  }
         post_actions: {  }
     fos_user_group:
         cols:
-            name: { method: sentence, params: ['180'], unique: false }
+            name: { method: name, unique: false, params: {  } }
         action: update
         limit: 0
         pre_actions: {  }
         post_actions: {  }
     fos_user_user:
         cols:
-            username: { method: sentence, params: ['180'], unique: false }
-            username_canonical: { method: sentence, params: ['180'], unique: false }
-            email: { method: email, unique: false, params: {  } }
-            email_canonical: { method: email, unique: false, params: {  } }
-            enabled: { method: boolean, params: [4], unique: false }
-            salt: { method: sentence, params: ['255'], unique: false }
-            password: { method: sentence, params: ['255'], unique: false }
-            last_login: { method: date, params: ['Y-m-d H:i:s'], unique: false }
-            confirmation_token: { method: sentence, params: ['180'], unique: false }
-            password_requested_at: { method: date, params: ['Y-m-d H:i:s'], unique: false }
-            created_at: { method: date, params: ['Y-m-d H:i:s'], unique: false }
-            updated_at: { method: date, params: ['Y-m-d H:i:s'], unique: false }
+            username: { method: userName, unique: true, params: {  } }
+            username_canonical: { method: userName, unique: true, params: {  } }
+            email: { method: email, unique: true, params: {  } }
+            email_canonical: { method: email, unique: true, params: {  } }
+            confirmation_token: { method: sha256, unique: true, params: {  } }
             date_of_birth: { method: date, params: ['Y-m-d H:i:s'], unique: false }
             firstname: { method: firstName, unique: false, params: {  } }
             lastname: { method: lastName, unique: false, params: {  } }
-            website: { method: sentence, params: ['64'], unique: false }
-            biography: { method: sentence, params: ['1000'], unique: false }
-            gender: { method: sentence, params: ['1'], unique: false }
-            locale: { method: sentence, params: ['8'], unique: false }
-            timezone: { method: sentence, params: ['64'], unique: false }
+            website: { method: url, unique: false, params: {  } }
+            biography: { method: sentence, params: ['100'], unique: false }
             phone: { method: phoneNumber, unique: false, params: {  } }
-            facebook_uid: { method: sentence, params: ['255'], unique: false }
-            facebook_name: { method: sentence, params: ['255'], unique: false }
-            twitter_uid: { method: sentence, params: ['255'], unique: false }
-            twitter_name: { method: sentence, params: ['255'], unique: false }
-            gplus_uid: { method: sentence, params: ['255'], unique: false }
-            gplus_name: { method: sentence, params: ['255'], unique: false }
-            token: { method: sentence, params: ['255'], unique: false }
-            two_step_code: { method: sentence, params: ['255'], unique: false }
-        action: update
-        limit: 0
-        pre_actions: {  }
-        post_actions: {  }
-    marque:
-        cols:
-            nom: { method: sentence, params: ['255'], unique: false }
-            code_marque: { method: sentence, params: ['255'], unique: false }
+            facebook_uid: { method: uuid, unique: false, params: {  } }
+            facebook_name: { method: userName, unique: false, params: {  } }
+            twitter_uid: { method: uuid, unique: false, params: {  } }
+            twitter_name: { method: userName, unique: false, params: {  } }
+            gplus_uid: { method: uuid, unique: false, params: {  } }
+            gplus_name: { method: userName, unique: false, params: {  } }
+            token: { method: sha256, unique: false, params: {  } }
+            two_step_code: { method: sha256, unique: false, params: {  } }
         action: update
         limit: 0
         pre_actions: {  }
         post_actions: {  }
     media__media:
         cols:
-            name: { method: sentence, params: ['255'], unique: false }
+            name: { method: word, unique: false, params: {  } }
             description: { method: sentence, params: [20], unique: false }
-            enabled: { method: boolean, params: [4], unique: false }
-            provider_name: { method: sentence, params: ['255'], unique: false }
-            provider_status: { method: randomNumber, params: [9], unique: false }
-            provider_reference: { method: sentence, params: ['255'], unique: false }
-            width: { method: randomNumber, params: [9], unique: false }
-            height: { method: randomNumber, params: [9], unique: false }
-            length: { method: randomFloat, params: [2, 0, 999999], unique: false }
-            content_type: { method: sentence, params: ['255'], unique: false }
-            content_size: { method: randomNumber, params: [9], unique: false }
-            copyright: { method: sentence, params: ['255'], unique: false }
-            author_name: { method: sentence, params: ['255'], unique: false }
-            context: { method: sentence, params: ['64'], unique: false }
-            cdn_is_flushable: { method: boolean, params: [4], unique: false }
-            cdn_flush_identifier: { method: sentence, params: ['64'], unique: false }
-            cdn_flush_at: { method: date, params: ['Y-m-d H:i:s'], unique: false }
-            cdn_status: { method: randomNumber, params: [9], unique: false }
-            updated_at: { method: date, params: ['Y-m-d H:i:s'], unique: false }
-            created_at: { method: date, params: ['Y-m-d H:i:s'], unique: false }
+            author_name: { method: name, unique: false, params: {  } }
         action: update
         limit: 0
         pre_actions: {  }
         post_actions: {  }
     modele:
         cols:
-            nom: { method: sentence, params: ['255'], unique: false }
-            num_modele: { method: sentence, params: ['255'], unique: false }
-            code_marque: { method: sentence, params: ['255'], unique: false }
-            code_modele: { method: sentence, params: ['255'], unique: false }
-            age_maxi: { method: sentence, params: ['255'], unique: false }
+            nom: { method: word, unique: false, params: {  } }
         action: update
         limit: 0
         pre_actions: {  }
@@ -160,29 +90,26 @@ entities:
     reparateur:
         cols:
             code_garage: { method: sentence, params: ['255'], unique: false }
-            nom: { method: sentence, params: ['255'], unique: false }
-            adresse: { method: sentence, params: ['255'], unique: false }
-            code_postal: { method: sentence, params: ['255'], unique: false }
-            ville: { method: sentence, params: ['255'], unique: false }
+            nom: { method: name, unique: false, params: {  } }
+            adresse: { method: address, unique: false, params: {  } }
+            codepostal: { method: postcode, unique: false, params: {  } }
+            ville: { method: city, unique: false, params: {  } }
+            portable: { method: phoneNumber, unique: false, params: {  } }
             telephone: { method: phoneNumber, unique: false, params: {  } }
-            fax: { method: sentence, params: ['255'], unique: false }
-            portable: { method: sentence, params: ['255'], unique: false }
-            scooter: { method: boolean, params: [4], unique: false }
-            email: { method: email, unique: false, params: {  } }
-            latitude: { method: sentence, params: ['255'], unique: false }
-            longitude: { method: sentence, params: ['255'], unique: false }
-            banque: { method: sentence, params: ['255'], unique: false }
-            iban: { method: sentence, params: ['255'], unique: false }
-            bic: { method: sentence, params: ['255'], unique: false }
+            fax: { method: phoneNumber, unique: false, params: {  } }
+            email: { method: email, unique: true, params: {  } }
+            latitude: { method: latitude, unique: false, params: {  } }
+            longitude: { method: longitude, unique: false, params: {  } }
+            banque: { method: word, unique: false, params: {  } }
+            iban: { method: iban, unique: false, params: {  } }
+            bic: { method: word, unique: false, params: {  } }
         action: update
         limit: 0
         pre_actions: {  }
         post_actions: {  }
     vehicule:
         cols:
-            immatriculation: { method: sentence, params: ['255'], unique: false }
-            annee: { method: sentence, params: ['255'], unique: false }
-            kilometrage: { method: sentence, params: ['255'], unique: false }
+            immatriculation: { method: word, unique: false, params: {  } }
         action: update
         limit: 0
         pre_actions: {  }
